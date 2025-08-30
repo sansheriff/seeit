@@ -18,23 +18,243 @@ const games = {};
 const QUESTIONS_PER_GAME = 2; 
 
 const movieQuestions = [
-  { id: 1, question: "What movie is this iconic opening scene from?", videoUrl: "/videos/clip1.mp4", answers: ["The Lord of the Rings", "The Hobbit", "The Two Towers", "Return of the King"], correctAnswer: 0, movie: "The Lord of the Rings: The Fellowship of the Ring", year: 2001 },
-  { id: 2, question: "Which film features the quote: 'I'll have what she's having'?", videoUrl: "/videos/clip1.mp4", answers: ["Sleepless in Seattle", "When Harry Met Sally...", "You've Got Mail", "Jerry Maguire"], correctAnswer: 1, movie: "When Harry Met Sally...", year: 1989 },
-  { id: 3, question: "This murder mystery's cast includes Daniel Craig and Chris Evans.", videoUrl: "/videos/clip1.mp4", answers: ["Knives Out", "Glass Onion", "Murder on the Orient Express", "Death on the Nile"], correctAnswer: 0, movie: "Knives Out", year: 2019 },
-  { id: 4, question: "This 90s classic stars John Travolta and Samuel L. Jackson.", videoUrl: "/videos/clip1.mp4", answers: ["Forrest Gump", "Pulp Fiction", "The Shawshank Redemption", "Good Will Hunting"], correctAnswer: 1, movie: "Pulp Fiction", year: 1994 },
-  { id: 5, question: "Which Pixar movie features a robot love story in a post-apocalyptic world?", videoUrl: "/videos/clip1.mp4", answers: ["Toy Story", "Up", "WALL-E", "Inside Out"], correctAnswer: 2, movie: "WALL-E", year: 2008 },
-  { id: 6, question: "This Christopher Nolan film involves dreams within dreams.", videoUrl: "/videos/clip1.mp4", answers: ["Inception", "Dunkirk", "The Dark Knight Rises", "Tenet"], correctAnswer: 0, movie: "Inception", year: 2010 },
-  { id: 7, question: "What is the primary setting for this fantasy epic?", videoUrl: "/videos/clip1.mp4", answers: ["Narnia", "Westeros", "Middle-earth", "Hogwarts"], correctAnswer: 2, movie: "The Lord of the Rings", year: 2001 },
-  { id: 8, question: "The line 'Here's looking at you, kid' is from which classic film?", videoUrl: "/videos/clip1.mp4", answers: ["The Maltese Falcon", "Citizen Kane", "It's a Wonderful Life", "Casablanca"], correctAnswer: 3, movie: "Casablanca", year: 1942 },
-  { id: 9, question: "Which of these is a famous line from 'The Godfather'?", videoUrl: "/videos/clip1.mp4", answers: ["I'll be back.", "Leave the gun, take the cannoli.", "Show me the money!", "I am your father."], correctAnswer: 1, movie: "The Godfather", year: 1972 },
-  { id: 10, question: "This Stanley Kubrick film is known for its groundbreaking visual effects.", videoUrl: "/videos/clip1.mp4", answers: ["Star Wars", "Blade Runner", "2001: A Space Odyssey", "Alien"], correctAnswer: 2, movie: "2001: A Space Odyssey", year: 1968 },
-  { id: 11, question: "Which director is famous for the 'Reservoir Dogs' and 'Pulp Fiction'?", videoUrl: "/videos/clip1.mp4", answers: ["Martin Scorsese", "Francis Ford Coppola", "Steven Spielberg", "Quentin Tarantino"], correctAnswer: 3, movie: "Pulp Fiction", year: 1994 },
-  { id: 12, question: "What type of animal is 'Babe' in the film of the same name?", videoUrl: "/videos/clip1.mp4", answers: ["A dog", "A pig", "A sheep", "A duck"], correctAnswer: 1, movie: "Babe", year: 1995 },
-  { id: 13, question: "In 'The Matrix', what color pill does Neo take?", videoUrl: "/videos/clip1.mp4", answers: ["The red pill", "The blue pill", "The green pill", "The yellow pill"], correctAnswer: 0, movie: "The Matrix", year: 1999 },
-  { id: 14, question: "Which film won the first-ever Academy Award for Best Picture?", videoUrl: "/videos/clip1.mp4", answers: ["The Jazz Singer", "Metropolis", "Wings", "Sunrise"], correctAnswer: 2, movie: "Wings", year: 1927 },
-  { id: 15, question: "What is the name of the friendly ghost in the 1995 film?", videoUrl: "/videos/clip1.mp4", answers: ["Slimer", "Beetlejuice", "Casper", "Moaning Myrtle"], correctAnswer: 2, movie: "Casper", year: 1995 }
-];
+  // Scott Pilgrim vs. the World Questions
+  { 
+    id: 1, 
+    question: "What letters are on the maroon collared t-shirt?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["SHRP", "SASS", "SARS", "STAR"], 
+    correctAnswer: 2, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
+  { 
+    id: 2, 
+    question: "What color is the door?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["Red", "Green", "Blue", "Yellow"], 
+    correctAnswer: 2, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
+  { 
+    id: 3, 
+    question: "Who is the caller?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["Wallace", "Ramona", "Scott", "Knives"], 
+    correctAnswer: 3, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
+  { 
+    id: 4, 
+    question: "What are the letters on the blue shirt?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["S.P.", "W.W.", "X.P.", "V.S."], 
+    correctAnswer: 1, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
+  { 
+    id: 5, 
+    question: "Who does Knives ask for?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["Wallace", "Kim", "The caller", "Scott"], 
+    correctAnswer: 3, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
+  { 
+    id: 6, 
+    question: "What number is on the white t-shirt?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756588714/Scott_Pilgrim_vs_the_World_Funny_Scene._HD_-_1080p_-_SandmannLV_1080p_h264_tkjwl2.mp4", 
+    answers: ["1", "2", "3", "4"], 
+    correctAnswer: 2, 
+    movie: "Scott Pilgrim vs. the World", 
+    year: 2010 
+  },
 
+  // Titanic Questions
+  { 
+    id: 7, 
+    question: "What are they eating?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["Soup", "Salad", "Bread", "Oysters"], 
+    correctAnswer: 2, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 8, 
+    question: "What letters are in front of the name 'Titanic'?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["USS", "HMS", "RMS", "SS"], 
+    correctAnswer: 2, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 9, 
+    question: "How did Jack get a ticket for the Titanic?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["It was a gift", "Won it in a poker game", "Bought the last one", "Worked for passage"], 
+    correctAnswer: 1, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 10, 
+    question: "Real men make what?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["Their own rules", "A good impression", "Their own luck", "A respectable living"], 
+    correctAnswer: 2, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 11, 
+    question: "What is Jack's last name?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["Dawson", "Hockley", "Bukater", "DeWitt"], 
+    correctAnswer: 0, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 12, 
+    question: "What two things does Jack have?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["A lucky coin and a photo", "A sketchbook and pencils", "A warm coat and some boots", "Air in his lungs, a few blank sheets of paper"], 
+    correctAnswer: 3, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+  { 
+    id: 13, 
+    question: "What are they drinking?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756586510/Titanic_3D_First_Class_Dinner_Official_Clip_HD_-_20th_Century_Studios_UK_480p_h264_jtdobl.mp4", 
+    answers: ["Red wine", "Champagne", "Water", "Whiskey"], 
+    correctAnswer: 1, 
+    movie: "Titanic", 
+    year: 1997 
+  },
+
+  // Billy Madison Questions
+  { 
+    id: 14, 
+    question: "Who is the caller?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756587768/Billy_Madison_1995_-_Billy_apologizes_Movie_Moments_-_Movie_Moments_720p_h264_lidhdl.mp4", 
+    answers: ["Danny McGrath", "Veronica Vaughn", "Eric Gordon", "Billy Madison"], 
+    correctAnswer: 3, 
+    movie: "Billy Madison", 
+    year: 1995 
+  },
+  { 
+    id: 15, 
+    question: "What color is the caller's robe?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756587768/Billy_Madison_1995_-_Billy_apologizes_Movie_Moments_-_Movie_Moments_720p_h264_lidhdl.mp4", 
+    answers: ["Blue", "Red", "Black", "Green"], 
+    correctAnswer: 1, 
+    movie: "Billy Madison", 
+    year: 1995 
+  },
+  { 
+    id: 16, 
+    question: "What year did Danny McGrath graduate?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756587768/Billy_Madison_1995_-_Billy_apologizes_Movie_Moments_-_Movie_Moments_720p_h264_lidhdl.mp4", 
+    answers: ["1994", "1988", "1984", "1990"], 
+    correctAnswer: 2, 
+    movie: "Billy Madison", 
+    year: 1995 
+  },
+  { 
+    id: 17, 
+    question: "What is Billy leaning on?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756587768/Billy_Madison_1995_-_Billy_apologizes_Movie_Moments_-_Movie_Moments_720p_h264_lidhdl.mp4", 
+    answers: ["A basketball", "A football", "A stack of books", "A globe"], 
+    correctAnswer: 1, 
+    movie: "Billy Madison", 
+    year: 1995 
+  },
+  { 
+    id: 18, 
+    question: "Who else is on Danny's 'People to Kill' list?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756587768/Billy_Madison_1995_-_Billy_apologizes_Movie_Moments_-_Movie_Moments_720p_h264_lidhdl.mp4", 
+    answers: ["Jack Simms", "Perry Blake", "Mikey Rutledge", "Carl Herbert"], 
+    correctAnswer: 1, 
+    movie: "Billy Madison", 
+    year: 1995 
+  },
+
+  // The Big Lebowski Questions
+  { 
+    id: 19, 
+    question: "Who bowls first?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756590547/ssvid.net---The-Big-Lebowski-1998-You-re-Entering-a-World-of_1080p_bxzqkh.mp4", 
+    answers: ["Walter", "The Dude", "Donny", "Jesus"], 
+    correctAnswer: 2, 
+    movie: "The Big Lebowski", 
+    year: 1998 
+  },
+  { 
+    id: 20, 
+    question: "What does Donny's shirt say?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756590547/ssvid.net---The-Big-Lebowski-1998-You-re-Entering-a-World-of_1080p_bxzqkh.mp4", 
+    answers: ["Dude", "Ray", "Walter", "Donny"], 
+    correctAnswer: 1, 
+    movie: "The Big Lebowski", 
+    year: 1998 
+  },
+
+  // Superbad Questions
+  { 
+    id: 21, 
+    question: "What is the bus number?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756591024/Superbad_-_McLovin_s_Fake_ID_Scene_HD_-_MOVIEPREPARE_1080p_h264_drd5qc.mp4", 
+    answers: ["3015", "2115", "3051", "2011"], 
+    correctAnswer: 0, 
+    movie: "Superbad", 
+    year: 2007 
+  },
+  { 
+    id: 22, 
+    question: "What is the name of the liquor store?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756591024/Superbad_-_McLovin_s_Fake_ID_Scene_HD_-_MOVIEPREPARE_1080p_h264_drd5qc.mp4", 
+    answers: ["The Best Stop", "The Corner Mart", "The Good Shopper", "The Liquor Barn"], 
+    correctAnswer: 2, 
+    movie: "Superbad", 
+    year: 2007 
+  },
+  { 
+    id: 23, 
+    question: "What character does Seth say McLovin looks like in the vest?", 
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756591024/Superbad_-_McLovin_s_Fake_ID_Scene_HD_-_MOVIEPREPARE_1080p_h264_drd5qc.mp4", 
+    answers: ["Aladdin", "Peter Pan", "A hobbit", "Pinocchio"], 
+    correctAnswer: 3, 
+    movie: "Superbad", 
+    year: 2007 
+  },
+  
+  // Sinners Questions
+  {
+    id: 24,
+    question: "Whose guitar was it said to be?",
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756591144/ssvid.net--We-Gon-Make-Some-Money-Sinners-Movie-Clip-2025_360p_sg9otg.mp4",
+    answers: ["Robert Johnson", "B.B. King", "Charley Patton", "Muddy Waters"],
+    correctAnswer: 2,
+    movie: "Sinners",
+    year: 2025
+  },
+  {
+    id: 25,
+    question: "What colors are the two main characters wearing?",
+    videoUrl: "https://res.cloudinary.com/dj6f471nj/video/upload/v1756591144/ssvid.net--We-Gon-Make-Some-Money-Sinners-Movie-Clip-2025_360p_sg9otg.mp4",
+    answers: ["Blue and Green", "Red and Yellow", "Black and White", "Orange and Purple"],
+    correctAnswer: 1,
+    movie: "Sinners",
+    year: 2025
+  },
+];
 function generateGameCode() {
   return Math.floor(1000 + Math.random() * 9000).toString();
 }
