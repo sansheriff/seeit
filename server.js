@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 const games = {};
-const QUESTIONS_PER_GAME = 2; 
+const QUESTIONS_PER_GAME = 5; 
 
 const movieQuestions = [
   // Scott Pilgrim vs. the World Questions
