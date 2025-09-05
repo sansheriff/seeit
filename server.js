@@ -1202,7 +1202,7 @@ io.on('connection', (socket) => {
   }
 
   function endGame(gameCode) {
-    const game = games[gameCode];
+    const game = games[code];
     if (!game) return;
     
     game.gameState = 'finished';

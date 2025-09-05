@@ -7,11 +7,22 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.5.4",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
   },
   "engines": {
     "node": ">=14.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sansheriff/seeit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sansheriff/seeit/issues"
+  },
+  "homepage": "https://github.com/sansheriff/seeit#readme"
 }
