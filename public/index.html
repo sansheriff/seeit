@@ -478,7 +478,6 @@
         let sessionToken = null;
         let reconnectAttempts = 0;
         let maxReconnectAttempts = 5;
-        let reconnectTimeout = null;
         let answerSubmitted = false;
 
         const menuMusic = document.getElementById('menuMusic');
@@ -502,8 +501,7 @@
             const savedSession = localStorage.getItem('quizSession');
             if (savedSession) {
                 const session = JSON.parse(savedSession);
-                // Check if session is less than 1 hour old
-                if (Date.now() - session.timestamp < 3600000) {
+                if (Date.now() - session.timestamp < 3600000) { // 1 hour validity
                     return session;
                 } else {
                     localStorage.removeItem('quizSession');
@@ -525,7 +523,6 @@
             document.getElementById('reconnectingOverlay').style.display = 'none';
             reconnectAttempts = 0;
             
-            // Attempt to reconnect if we have a session
             const savedSession = loadSession();
             if (savedSession && !isMainScreen) {
                 attemptReconnection(savedSession);
@@ -539,25 +536,9 @@
             
             if (!isMainScreen && sessionToken) {
                 document.getElementById('reconnectingOverlay').style.display = 'flex';
-                attemptAutoReconnect();
             }
         });
-
-        function attemptAutoReconnect() {
-            if (reconnectAttempts >= maxReconnectAttempts) {
-                document.getElementById('reconnectMessage').textContent = 
-                    'Unable to reconnect. Please refresh the page.';
-                return;
-            }
-            
-            reconnectAttempts++;
-            document.getElementById('reconnectMessage').textContent = 
-                `Attempting to reconnect... (${reconnectAttempts}/${maxReconnectAttempts})`;
-            
-            // Socket.io will automatically attempt to reconnect
-            // We just need to handle the UI and session restoration
-        }
-
+        
         function attemptReconnection(session) {
             socket.emit('attemptReconnection', {
                 sessionToken: session.sessionToken
@@ -567,7 +548,6 @@
         function playMusic(track) {
             if (!isMainScreen) return;
 
-            // Ensure audio is stopped before playing new track
             menuMusic.pause();
             questionMusic.pause();
             menuMusic.currentTime = 0;
@@ -640,10 +620,7 @@
         }
 
         function submitAnswer(answerIndex) {
-            if (answerSubmitted) {
-                console.log('Answer already submitted');
-                return;
-            }
+            if (answerSubmitted) return;
             
             answerSubmitted = true;
             const responseTime = (Date.now() - questionStartTime) / 1000;
@@ -652,9 +629,9 @@
             document.querySelectorAll('#playerAnswersGrid .answer-btn.selected').forEach(btn => {
                 btn.classList.remove('selected');
             });
-            document.getElementById(`answer${answerIndex}`).classList.add('selected');
+            const selectedBtn = document.getElementById(`answer${answerIndex}`);
+            if (selectedBtn) selectedBtn.classList.add('selected');
             
-            // Disable all answer buttons
             document.querySelectorAll('#playerAnswersGrid .answer-btn').forEach(btn => {
                 btn.disabled = true;
             });

@@ -929,7 +929,11 @@ function generateGameCode() {
   return Math.floor(1000 + Math.random() * 9000).toString();
 }
 
+<<<<<<< HEAD
 function getPlayersData(game) {
+=======
+f getPlayersData(game) {
+>>>>>>> 305edeb1df104283c5e5f2583f053b752b054a50
   if (!game || !game.players) return [];
   return Object.values(game.players).map(p => ({
     name: p.name,
